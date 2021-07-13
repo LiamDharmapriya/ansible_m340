@@ -1,5 +1,9 @@
+[web_servers]
 172.31.30.75 ansible_connect=ssh ansible_user=ec2-user 
-
 172.31.9.120 ansible_connect=ssh ansible_user=ec2-user
 
+[db_servers]
+172.31.10.162 ansible_connect=ssh ansible_user=ubuntu
 
+[file_servers]
+172.31.25.23 ansible_connect=ssh ansible_user=centos

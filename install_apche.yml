@@ -4,8 +4,24 @@
   become: true
   tasks:
 
-  - name: install apache2 package
-    yum:
-      name: httpd
+  - name: install apache and php for Ubuntu servers
+    apt:
+      name: 
+        - apache2
+        - libapche2-mod-php
+      state: latest
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu" 
+  
+   - name: install apache and php for Centos servers
+     yum:
+       name: 
+        - httpd
+        - libapche2-mod-ph
+       state: latest
+       update_cache: yes
+     when: ansible_distribution == "Ubuntu"
+      
+
       
 
